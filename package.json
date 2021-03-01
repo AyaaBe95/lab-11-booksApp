@@ -19,10 +19,13 @@
   },
   "homepage": "https://github.com/AyaaBe95/lab-11-booksApp#readme",
   "dependencies": {
+    "client": "0.0.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "include": "^1.1.0",
+    "pg": "^8.5.1",
     "post": "0.0.1",
     "response": "^0.18.0",
     "superagent": "^6.1.0"
