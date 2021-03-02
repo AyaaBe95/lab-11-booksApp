@@ -11,7 +11,8 @@
 </head>
 <body>
     <section id="updateForm">
-        
+        <h2>Update Book!</h2>
+        <br>
         <form action="/books/<%= book.id %>?_method=put" method="POST">
           <input type="text" name="title" value="<%= book.title  %>" >
           <br>
@@ -28,7 +29,7 @@
           <input type="text" name="image_url" value="<%= book.image_url %>">
           <br>
           <br>
-          <button>Update Book Details</button> 
+          <button id="upButton">Update Book Details</button> 
           <button id="cancel">Cancel</button> 
         </form>
         </section>

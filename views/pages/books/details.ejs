@@ -23,7 +23,7 @@
             <p>ISBN: <%= book.isbn %></p>
             <button id="updateBtn">Update Details</button>
             <form action="/deleteBook/<%= book.id %>?_method=delete" method="post">
-              <button>Delete Book</button>
+              <button id="deleteBtn">Delete Book</button>
             </form>
           </div>
           <%- include('edit.ejs'); %>

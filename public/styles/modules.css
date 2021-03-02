@@ -11,17 +11,53 @@
   height: 8%;
   top: 0;
 font-size: x-large;
+}
 
+#updateBtn {
+  float: left;
+  margin-left: 70px;
+  width: 130px;
+  margin-bottom: 15px;
+  height: 35px;
+  background-color: black;
+  color: white;
+}
+
+#upButton{
+  width: 130px;
+  margin-bottom: 15px;
+  height: 35px;
+  background-color: black;
+  color: white;
 
 }
 
-/* *{
-font-size: larger;
-} */
+#editForm input{
 
-/* #count{
-font-size: x-large;
-} */
+  width: 250px;
+  height: 30px;
+  font-size: large;
+}
+
+#editForm button{
+  width: 200px;
+  height: 35px;
+  background-color: black;
+  color: white;
+  margin-bottom: 50px;
+}
+
+#deleteBtn , #cancel{
+  display: right;
+  width: 130px;
+  margin-bottom: 15px;
+  height: 35px;
+  background-color: black;
+  color: white;
+}
+
+
+
 
 #newForm{
     text-align: center;
@@ -81,7 +117,7 @@ margin-bottom: 15px;
 background-color: #787878;
 color: white;
 text-align: center;
-width: 450px;
+width: 500px;
 height: fit-content;
 margin-left: auto;
 margin-right: auto;
@@ -152,9 +188,10 @@ color: black;
 background-color: #000;
 color: white;
 }
+
+
     
     @media screen and (max-width: 600px) {
-      /* .topnav a:not(:first-child) {display: none;} */
       .topnav a.icon {
         float: right;
         display: block;
@@ -175,4 +212,3 @@ color: white;
         text-align: left;
       }
     }
-    

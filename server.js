@@ -94,7 +94,6 @@ server.post('/books', (req, res) => {
 })
 
 server.post('/searches', (req, res) => {
-    console.log('Hello from search');
     let searchInput = req.body.search;
     let key = process.env.GOOGLE_API_KEY;
     let url;
@@ -103,7 +102,6 @@ server.post('/searches', (req, res) => {
     } else {
         url = `https://www.googleapis.com/books/v1/volumes?q=${searchInput}+inauthor`;
     }
-    console.log('Hello from search22');
     superagent.get(url)
         .then(result => {
             console.log(result);
@@ -144,7 +142,6 @@ function Book(data) {
     this.title = (data.volumeInfo.title) ? data.volumeInfo.title : `Title unavilable`;
     this.author = (Array.isArray(data.volumeInfo.authors)) ? data.volumeInfo.authors.join(', ') : `Unknown Author`;
     this.description = (data.volumeInfo.description) ? data.volumeInfo.description : `description unavilable`;
-    // this.isbn = (data.volumeInfo.industryIdentifiers) ? data.volumeInfo.industryIdentifiers[0].identifier : `Unknown ISBN`;
     if (data.volumeInfo.industryIdentifiers) {
         this.isbn = data.volumeInfo.industryIdentifiers[0].identifier
     } else {
