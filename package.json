@@ -25,6 +25,7 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "include": "^1.1.0",
+    "method-override": "^3.0.0",
     "pg": "^8.5.1",
     "post": "0.0.1",
     "response": "^0.18.0",
