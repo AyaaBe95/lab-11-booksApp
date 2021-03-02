@@ -35,23 +35,19 @@ server.delete('/deleteBook/:id',(req,res) =>{
 
 })
 
-server.put('/books/:id', (req,res) => {
-    console.log(req.body);
+server.put('/books/:id',(req,res) =>{
     let id = req.params.id;
-    let { author ,title, isbn , image_url, description} = req.body;
-    let SQL = `UPDATE books SET author=$1,title=$2,isbn=$3, image_url=$4,  description=$5 WHERE id =$6;`;
-    let values = [author ,title, isbn, image_url, description, id];
-    client.query(SQL, values)
-      .then(() => {
-              console.log('Hello!!');
+    let { author,title, isbn, image_url, description} = req.body;
+    let SQL = `UPDATE books SET author=$1,title=$2,isbn=$3,image_url=$4,description=$5 WHERE id =$6;`;
+    let safeValues = [author,title, isbn, image_url, description,id];
+    client.query(SQL, safeValues)
+    .then(() => {
         res.redirect(`/books/${id}`);
-      })
-      .catch(err => {
-        errorHandler('Error in updating the DATA!')
-      })
-  });
-  
-  
+    })
+
+
+})
+
 
 
 
