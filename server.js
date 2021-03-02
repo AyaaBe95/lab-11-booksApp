@@ -105,17 +105,20 @@ function errorHandler(errors) {
 
 
 function Book(data) {
-    
     if (data.volumeInfo.imageLinks && data.volumeInfo.imageLinks.thumbnail) {
         this.image_url = data.volumeInfo.imageLinks.thumbnail
     } else {
         this.image_url = "https://i.imgur.com/J5LVHEL.jpg";
     }
-    this.title = data.volumeInfo.title;
-    this.author = data.volumeInfo.authors;
-    this.description = data.volumeInfo.description || "There is no description";
-    this.isbn = (data.volumeInfo.industryIdentifiers && data.volumeInfo.industryIdentifiers[0].type + " " +
-        data.volumeInfo.industryIdentifiers[0].identifier) || "There is no isbn ";
+    this.title = (data.volumeInfo.title) ? data.volumeInfo.title : `Title unavilable`;
+    this.author = (Array.isArray(data.volumeInfo.authors)) ? data.volumeInfo.authors.join(', ') : `Unknown Author`;
+    this.description = (data.volumeInfo.description) ? data.volumeInfo.description : `description unavilable`;
+    // this.isbn = (data.volumeInfo.industryIdentifiers) ? data.volumeInfo.industryIdentifiers[0].identifier : `Unknown ISBN`;
+    if (data.volumeInfo.industryIdentifiers) {
+        this.isbn = data.volumeInfo.industryIdentifiers[0].identifier
+    } else {
+        this.isbn = "No ISBN for this book!!";
+    }
 }
 
 
